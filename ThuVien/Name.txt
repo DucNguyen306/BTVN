@@ -1,0 +1,19 @@
+package ThuVien;
+
+public class Name {
+	private String name;
+    private Author Author;
+    
+    public Name(String name, Author Author) {
+        this.name = name;
+        this.Author = Author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Author getAuthor() {
+        return Author;
+    }
+}

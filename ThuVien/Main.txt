@@ -1,0 +1,46 @@
+package MainThuVien;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import ThuVien.Author;
+import ThuVien.Book;
+import ThuVien.Name;
+import ThuVien.Status;
+
+public class Main {
+	public static void main(String[] args) {
+        ArrayList<Author> lst_Author = new ArrayList<Author>();
+        lst_Author.add(new Author("Hemingway"));
+        lst_Author.add(new Author("Tolkien"));
+        lst_Author.add(new Author("Aoyama GoSho"));
+        
+        ArrayList<Name> lst_Name = new ArrayList<Name>();
+        lst_Name.add(new Name("Ong gia va bien ca", lst_Author.get(0)));
+        lst_Name.add(new Name("Chua te cua nhung chiec nhan", lst_Author.get(1)));
+        lst_Name.add(new Name("Conan", lst_Author.get(2)));
+	       
+        ArrayList<Status> lst_Status = new ArrayList<Status>();
+        lst_Status.add(new Status("Co", lst_Author.get(0)));
+        lst_Status.add(new Status("Khong", lst_Author.get(1)));
+        lst_Status.add(new Status("Co", lst_Author.get(2)));
+        
+        ArrayList<Book> lst_Book = new ArrayList<Book>();
+        lst_Book.add(new Book(lst_Name.get(0), lst_Author.get(0), lst_Status.get(0), 5));
+        lst_Book.add(new Book(lst_Name.get(1), lst_Author.get(1), lst_Status.get(1), 4));
+        lst_Book.add(new Book(lst_Name.get(2), lst_Author.get(2), lst_Status.get(2), 7));
+        
+        String a;
+		Scanner input = new Scanner(System.in);
+        a = input.nextLine();
+        if(a=="Ong gia va bien ca") {
+        	System.out.printf("%s %s %d", lst_Book.get(0).getAuthor().getAuthor(), lst_Book.get(0).getStatus().getStatus(), lst_Book.get(0).getSoluong());
+        }
+        else if(a=="Chua te cua nhung chiec nhan") {
+        	System.out.printf("%s %s %d", lst_Book.get(1).getAuthor().getAuthor(), lst_Book.get(1).getStatus().getStatus(), lst_Book.get(1).getSoluong());
+        }
+        else if(a=="Conan") {
+        	System.out.printf("%s %s %d", lst_Book.get(2).getAuthor().getAuthor(), lst_Book.get(2).getStatus().getStatus(), lst_Book.get(2).getSoluong());
+        }
+	}
+}

@@ -1,0 +1,50 @@
+package Program;
+
+public class LaptopID {
+	Cpu cpu;
+    Ram ram;
+    Mainbroad mainbroad;
+    Hang hang;
+    int soLuong;
+    int ID;
+    
+    
+    /**
+     * @param cpu
+     * @param ram
+     * @param mainbroad
+     * @param hang
+     */
+    public LaptopID(Cpu cpu, Ram ram, Mainbroad mainbroad, Hang hang, int soLuong, int ID) {
+        super();
+        this.ID = ID;
+        this.cpu = cpu;
+        this.ram = ram;
+        this.mainbroad = mainbroad;
+        this.hang = hang;
+        this.soLuong = soLuong;
+    }
+
+    public Cpu getCpu() {
+        return cpu;
+    }
+
+    public Ram getRam() {
+        return ram;
+    }
+
+    public Mainbroad getMainbroad() {
+        return mainbroad;
+    }
+
+    public Hang getHang() {
+        return hang;
+    }
+    public int getID() {
+        return ID;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+}

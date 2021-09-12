@@ -1,0 +1,19 @@
+package ThuVien;
+
+public class Status {
+	private String Status;
+	private Author Author;
+    
+    public Status(String Status, Author Author){
+        this.Status = Status;
+        this.Author = Author;
+    }
+    
+    public String getStatus() {
+        return this.Status;
+    }
+    
+    public Author getAuthor() {
+        return this.Author;
+    }
+}

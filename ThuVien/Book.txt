@@ -1,0 +1,31 @@
+package ThuVien;
+
+public class Book {
+	private Name name;
+	private Author author;
+	private Status status;
+	private int soluong;
+
+	public Book(Name name, Author author, Status status, int soluong) {
+		super();
+		this.name = name;
+		this.author = author;
+		this.status = status;
+		this.soluong = soluong;
+	}
+
+	public Name getName() {
+		return name;
+	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+	public int getSoluong() {
+		return soluong;
+	}
+}

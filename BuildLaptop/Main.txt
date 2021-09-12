@@ -1,0 +1,54 @@
+package BuildLaptop;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Program.Cpu;
+import Program.Hang;
+import Program.LaptopID;
+import Program.Mainbroad;
+import Program.Ram;
+
+public class MainBuild {
+	public static void main(String[] args) {
+        ArrayList<Hang> lst_Hang = new ArrayList<Hang>();
+        lst_Hang.add(new Hang("Dell"));
+        lst_Hang.add(new Hang("Asus"));
+        lst_Hang.add(new Hang("MSI"));
+
+        ArrayList<Cpu> lst_Cpu = new ArrayList<Cpu>();
+        lst_Cpu.add(new Cpu("Ryzen 3 3500", lst_Hang.get(1)));
+        lst_Cpu.add(new Cpu("Ryzen 4 3500", lst_Hang.get(0)));
+        lst_Cpu.add(new Cpu("Intel core i 5 11500", lst_Hang.get(2)));
+
+        ArrayList<Ram> lst_Ram = new ArrayList<Ram>();
+        lst_Ram.add(new Ram("2600 Ghz 8GB", lst_Hang.get(0)));
+        lst_Ram.add(new Ram("2700 Ghz 12GB", lst_Hang.get(1)));
+        lst_Ram.add(new Ram("3200 Ghz 16GB", lst_Hang.get(2)));
+
+        ArrayList<Mainbroad> lst_Main = new ArrayList<Mainbroad>();
+        lst_Main.add(new Mainbroad("X881", lst_Hang.get(2)));
+        lst_Main.add(new Mainbroad("Z772", lst_Hang.get(1)));
+        lst_Main.add(new Mainbroad("B450M", lst_Hang.get(0)));
+
+        ArrayList<LaptopID> lst_lapTopID = new ArrayList<LaptopID>();
+        lst_lapTopID.add(new LaptopID(lst_Cpu.get(0), lst_Ram.get(1), lst_Main.get(2), lst_Hang.get(0), 5, 1));
+        lst_lapTopID.add(new LaptopID(lst_Cpu.get(1), lst_Ram.get(0), lst_Main.get(1), lst_Hang.get(0), 4, 2));
+        lst_lapTopID.add(new LaptopID(lst_Cpu.get(2), lst_Ram.get(1), lst_Main.get(2), lst_Hang.get(0), 7, 3));
+        int a;
+		Scanner input = new Scanner(System.in);
+        a = input.nextInt();
+        if(a == 1) {
+        	System.out.printf("%s %s %s %d", lst_lapTopID.get(0).getCpu().getName(), lst_lapTopID.get(0).getRam().getName(),
+                    lst_lapTopID.get(0).getMainbroad().getName(), lst_lapTopID.get(0).getSoLuong());
+        }
+        else if(a == 2) {
+        	System.out.printf("%s %s %s %d", lst_lapTopID.get(1).getCpu().getName(), lst_lapTopID.get(1).getRam().getName(),
+                    lst_lapTopID.get(1).getMainbroad().getName(), lst_lapTopID.get(1).getSoLuong());
+        }
+        else if(a == 3) {
+        	System.out.printf("%s %s %s %d", lst_lapTopID.get(2).getCpu().getName(), lst_lapTopID.get(2).getRam().getName(),
+                    lst_lapTopID.get(2).getMainbroad().getName(), lst_lapTopID.get(2).getSoLuong());
+        }
+    }
+}
