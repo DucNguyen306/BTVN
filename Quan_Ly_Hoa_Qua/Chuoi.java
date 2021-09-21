@@ -11,9 +11,4 @@ public class Chuoi extends ThongTin{
 	public float getKL_Kali_40() {
 		return KL_Kali_40;
 	}
-	
-	@Override
-	public String toString() {
-		return getTen()+ ","+ getGia()+","+ getSL()+","+ getKL_Kali_40() + " Kali-40";
-	}
 }
